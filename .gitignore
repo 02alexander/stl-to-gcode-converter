@@ -1,1 +1,5 @@
-*.stl
+
+target/
+*.gcode
+*.FCStd
+*.txt
