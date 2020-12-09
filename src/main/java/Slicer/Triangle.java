@@ -29,6 +29,7 @@ public class Triangle {
         double t = ((double)c-linePoint.getZ())/dirVec.getZ();
         return linePoint.add(dirVec.scalarmul(t));
     }
+    // ger tillbaka alla punkter där 
     public ArrayList<Vector3> intersectionPoints(float planeHeight) {
         ArrayList<Vector3> v = new ArrayList<Vector3>();
         if(isIntersectingEdge(origin, edge1, planeHeight)) {

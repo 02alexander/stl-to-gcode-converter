@@ -78,6 +78,7 @@ public class Polygon {
         return new Polygon(reversed);
     }
     
+    // Ger tillbaka alla sträcker som linjen från dirVec och linePont är i polygonet.
     public ArrayList<Polygon> intersectionLines(Vector2 dirVec, Vector2 linePoint) {
         ArrayList<Polygon> polygons = new ArrayList<>();
         
@@ -119,7 +120,7 @@ public class Polygon {
     }
     
     // u är vektorn som kommer efter v.
-    // ger tillbaka riktningen av vektorn som bildar det inre hörnet.
+    // ger tillkaba punkten som bildar det inre hörnet av u, v där punktens avstånd från u och v är margin
     public static Vector2 innerCorner(Vector2 v, Vector2 u, double orientation, double margin) {
         // normaliserar vektor v
         v = v.scalarmul(1.0/v.length());
@@ -192,7 +193,6 @@ public class Polygon {
     
     // Om man har en trapets där toppen är väldigt liten så kan det bildas loopar
     // som denna funktion rättar till genom att sätta skärningspunkten som den nya punkten
-    
     public Polygon fixLoops() {
         ArrayList<Vector2> newVertices = new ArrayList<>(); 
         
